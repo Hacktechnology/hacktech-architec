@@ -28,10 +28,10 @@
         </div>
 
         <div class="module-card cctv-border">
-            <h2 class="module-title">📹 MÓDULO CCTV / SEGURIDAD</h2>
+            <h2 class="module-title">📹 CCTV (VLAN 20 SUGERIDA)</h2>
             <div class="form-row">
                 <input type="number" id="vlanCctv" placeholder="ID VLAN" oninput="validarEntrada('vlanCctv', 1, 4094)">
-                <input type="text" id="portsCctv" placeholder="Puertos (ej: 1-4)">
+                <input type="text" id="portsCctv" placeholder="Puertos">
             </div>
             <div class="ip-input-fix">
                 <span>192.168.</span>
@@ -42,10 +42,10 @@
         </div>
 
         <div class="module-card office-border">
-            <h2 class="module-title">💻 MÓDULO OFICINA / DATOS</h2>
+            <h2 class="module-title">💻 DATOS (VLAN 30 SUGERIDA)</h2>
             <div class="form-row">
                 <input type="number" id="vlanOff" placeholder="ID VLAN" oninput="validarEntrada('vlanOff', 1, 4094)">
-                <input type="text" id="portsOff" placeholder="Puertos (ej: 5-24)">
+                <input type="text" id="portsOff" placeholder="Puertos">
             </div>
             <div class="ip-input-fix">
                 <span>192.168.</span>
@@ -56,16 +56,11 @@
         </div>
 
         <div class="security-card">
-            <h2 class="module-title">🔐 SEGURIDAD ADMINISTRATIVA</h2>
+            <h2 class="module-title">🔐 SEGURIDAD</h2>
             <div class="pass-box">
-                <input type="text" id="passInput" placeholder="Password Sugerido" readonly>
+                <input type="text" id="passInput" placeholder="Password" readonly>
                 <button onclick="generarPass()">RANDOM</button>
             </div>
-        </div>
-
-        <div class="form-group">
-            <label>Puerto Uplink (Trunk):</label>
-            <input type="text" id="trunkPort" placeholder="Ej: 1 o SFP1">
         </div>
 
         <button class="btn-main" onclick="generarConfigDual()">GENERAR CONFIGURACIÓN</button>
@@ -77,6 +72,17 @@
             </div>
             <pre id="cliScript"></pre>
             <button class="btn-report" onclick="generarReporte()">📄 GENERAR PDF CON QR</button>
+        </div>
+
+        <div class="help-section">
+            <button class="btn-help" onclick="toggleAyuda()">📖 MANUAL DE INSTRUCCIONES</button>
+            <div id="ayudaContent" class="ayuda-content" style="display:none;">
+                <h4>🚀 Guía Rápida HackTech</h4>
+                <p>1. <b>VLANs:</b> Usa 20 para CCTV y 30 para Datos.</p>
+                <p>2. <b>Termux:</b> Copia el script y pégalo en la terminal del switch.</p>
+                <p>3. <b>QR:</b> Entrega el PDF al cliente para soporte futuro.</p>
+                <p><small>Hacktechnology - Precisión en Infraestructura</small></p>
+            </div>
         </div>
 
         <button class="btn-reset" onclick="location.reload()">🗑️ NUEVO PROYECTO</button>
