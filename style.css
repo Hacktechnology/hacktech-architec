@@ -1,33 +1,29 @@
-body { background: #0a0a0a; color: #fff; font-family: 'Segoe UI', sans-serif; padding: 10px; margin: 0; }
+body { background: #0a0a0a; color: #fff; font-family: sans-serif; padding: 10px; margin: 0; }
 .container { max-width: 400px; margin: auto; background: #121212; padding: 20px; border-radius: 15px; border: 1px solid #222; }
 
 .brand-header { text-align: center; margin-bottom: 20px; }
-.logo-shield { width: 50px; height: 50px; margin: 0 auto; filter: drop-shadow(0 0 5px #00ff88); }
-h1 { font-size: 1.1rem; letter-spacing: 1px; }
-h1 span { color: #00ff88; display: block; font-size: 0.8rem; }
+.logo-shield { width: 40px; height: 40px; margin: 0 auto; filter: drop-shadow(0 0 5px #00ff88); }
+h1 { font-size: 1rem; }
+h1 span { color: #00ff88; display: block; font-size: 0.7rem; }
 
-.module-card { background: #1a1a1a; padding: 15px; border-radius: 10px; margin-bottom: 15px; border-left: 5px solid; }
+.module-card { background: #1a1a1a; padding: 15px; border-radius: 10px; margin-bottom: 10px; border-left: 4px solid; }
 .cctv-border { border-left-color: #00ff88; }
 .office-border { border-left-color: #2196f3; }
-.module-title { font-size: 0.7rem; color: #888; margin-bottom: 10px; font-weight: bold; text-transform: uppercase; }
+.module-title { font-size: 0.65rem; color: #888; font-weight: bold; margin-bottom: 8px; }
 
-.form-row { display: flex; gap: 8px; margin-bottom: 8px; }
-input, select { background: #252525; border: 1px solid #333; color: #fff; padding: 12px; border-radius: 6px; font-size: 0.9rem; width: 100%; box-sizing: border-box; outline: none; }
-input:focus { border-color: #00ff88; }
+input, select { background: #222; border: 1px solid #333; color: #fff; padding: 10px; border-radius: 5px; width: 100%; box-sizing: border-box; font-size: 0.9rem; }
+.ip-input-fix { display: flex; align-items: center; background: #222; border-radius: 5px; padding: 0 10px; margin-top: 5px; }
+.ip-input-fix input { border: none !important; width: 50px !important; color: #00ff88 !important; text-align: center; }
 
-.ip-input-fix { display: flex; align-items: center; background: #252525; border: 1px solid #333; border-radius: 6px; padding: 0 10px; }
-.ip-input-fix input { border: none !important; width: 55px !important; text-align: center; color: #00ff88 !important; font-weight: bold; background: transparent !important; }
+.btn-main { width: 100%; padding: 15px; background: #00ff88; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; margin-top: 10px; }
+.result-box { background: #000; border: 1px solid #00ff88; padding: 15px; border-radius: 8px; margin-top: 15px; }
+pre { color: #00ff88; font-size: 0.7rem; white-space: pre-wrap; font-family: monospace; }
 
-.subnet-info { font-size: 0.65rem; color: #00ff88; margin-top: 5px; font-family: monospace; }
+/* ESTILOS DEL MANUAL */
+.help-section { margin-top: 25px; border: 1px solid #333; border-radius: 8px; overflow: hidden; }
+.btn-help { width: 100%; padding: 12px; background: #222; color: #00ff88; border: none; font-size: 0.75rem; font-weight: bold; cursor: pointer; }
+.ayuda-content { padding: 15px; background: #151515; font-size: 0.8rem; color: #bbb; border-top: 1px solid #333; line-height: 1.4; }
+.ayuda-content h4 { color: #00ff88; margin: 0 0 10px 0; }
 
-.security-card { background: #1a1a1a; padding: 15px; border-radius: 10px; border: 1px dashed #444; margin-bottom: 15px; }
-.pass-box { display: flex; gap: 8px; }
-.pass-box button { background: #333; color: #00ff88; border: 1px solid #00ff88; padding: 0 15px; border-radius: 6px; cursor: pointer; font-size: 0.7rem; font-weight: bold; }
-
-.btn-main { width: 100%; padding: 15px; background: #00ff88; color: #000; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; text-transform: uppercase; }
-
-.result-box { margin-top: 20px; background: #000; padding: 15px; border-radius: 8px; border: 1px solid #00ff88; }
-pre { font-size: 0.75rem; color: #00ff88; white-space: pre-wrap; font-family: monospace; margin: 10px 0; }
-
-.btn-report { width: 100%; background: #2196f3; color: white; border: none; padding: 12px; border-radius: 6px; font-weight: bold; margin-top: 10px; cursor: pointer; }
-.btn-reset { width: 100%; background: none; border: 1px solid #444; color: #555; padding: 10px; margin-top: 20px; border-radius: 8px; cursor: pointer; font-size: 0.7rem; }
+.btn-report { width: 100%; background: #2196f3; color: white; border: none; padding: 10px; border-radius: 5px; margin-top: 10px; font-weight: bold; }
+.btn-reset { width: 100%; background: none; border: 1px solid #333; color: #555; padding: 10px; margin-top: 20px; border-radius: 5px; font-size: 0.7rem; }
