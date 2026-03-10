@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HackTech Network Architect PRO</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="brand-header">
+            <div class="logo-shield">
+                <svg viewBox="0 0 100 100">
+                    <path d="M50 5 L15 25 V50 C15 70 50 95 50 95 C50 95 85 70 85 50 V25 L50 5Z" fill="none" stroke="#00ff88" stroke-width="5"/>
+                    <path d="M35 45 H65 M35 60 H65 M50 35 V70" stroke="#00ff88" stroke-width="4"/>
+                </svg>
+            </div>
+            <h1>HACKTECH <span>NETWORK ARCHITECT</span></h1>
+        </div>
+
+        <div class="form-group">
+            <label>Hardware de Red:</label>
+            <select id="brandSelect">
+                <option value="mikrotik">MikroTik (RouterOS)</option>
+                <option value="tplink">TP-Link / Cisco (CLI)</option>
+            </select>
+        </div>
+
+        <div class="module-card cctv-border">
+            <h2 class="module-title">📹 MÓDULO CCTV / SEGURIDAD</h2>
+            <div class="form-row">
+                <input type="number" id="vlanCctv" placeholder="ID VLAN" oninput="validarEntrada('vlanCctv', 1, 4094)">
+                <input type="text" id="portsCctv" placeholder="Puertos (ej: 1-4)">
+            </div>
+            <div class="ip-input-fix">
+                <span>192.168.</span>
+                <input type="number" id="octCctv" placeholder="X" oninput="actualizarInfoRed('Cctv')">
+                <span>.0</span>
+            </div>
+            <p id="infoCctv" class="subnet-info">Rango: -</p>
+        </div>
+
+        <div class="module-card office-border">
+            <h2 class="module-title">💻 MÓDULO OFICINA / DATOS</h2>
+            <div class="form-row">
+                <input type="number" id="vlanOff" placeholder="ID VLAN" oninput="validarEntrada('vlanOff', 1, 4094)">
+                <input type="text" id="portsOff" placeholder="Puertos (ej: 5-24)">
+            </div>
+            <div class="ip-input-fix">
+                <span>192.168.</span>
+                <input type="number" id="octOff" placeholder="X" oninput="actualizarInfoRed('Off')">
+                <span>.0</span>
+            </div>
+            <p id="infoOff" class="subnet-info">Rango: -</p>
+        </div>
+
+        <div class="security-card">
+            <h2 class="module-title">🔐 SEGURIDAD ADMINISTRATIVA</h2>
+            <div class="pass-box">
+                <input type="text" id="passInput" placeholder="Password Sugerido" readonly>
+                <button onclick="generarPass()">RANDOM</button>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Puerto Uplink (Trunk):</label>
+            <input type="text" id="trunkPort" placeholder="Ej: 1 o SFP1">
+        </div>
+
+        <button class="btn-main" onclick="generarConfigDual()">GENERAR CONFIGURACIÓN</button>
+
+        <div id="result" class="result-box" style="display:none;">
+            <div class="header-script">
+                <h3>Script Final ✅</h3>
+                <button class="btn-copy" onclick="copiarAlPortapapeles()">Copiar</button>
+            </div>
+            <pre id="cliScript"></pre>
+            <button class="btn-report" onclick="generarReporte()">📄 GENERAR PDF CON QR</button>
+        </div>
+
+        <button class="btn-reset" onclick="location.reload()">🗑️ NUEVO PROYECTO</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
